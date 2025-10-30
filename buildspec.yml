@@ -4,11 +4,25 @@ phases:
   install:
     runtime-versions:
       python: 3.9
+
   pre_build:
     commands:
       - echo "Using Python version:"
       - python --version
+      - echo "Removing .python-version to avoid pyenv error"
+      - rm -f .python-version
+      - echo "Installing dependencies..."
+      - pip install --upgrade pip
       - pip install -r api/requirements.txt
+
+  build:
+    commands:
+      - echo "Running application build or tests..."
+      # Aquí puedes agregar tu comando de prueba, por ejemplo:
+      # - pytest
+      # o
+      # - python api/app.py
+
 artifacts:
   files:
     - '**/*'
