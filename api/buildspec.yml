@@ -22,8 +22,20 @@ phases:
     commands:
       - echo Pushing the Docker image...
       - docker push 777422376006.dkr.ecr.us-east-1.amazonaws.com/blacklist-microservice:latest
+      - echo Writing Image Definitions file...
+      - printf '[{"name":"container-blacklist","imageUri":"777422376006.dkr.ecr.us-east-1.amazonaws.com/blacklist-microservice:latest"}]' > imagedefinitions.json
+      - printf '{"ImageURI":"777422376006.dkr.ecr.us-east-1.amazonaws.com/blacklist-microservice:latest"}' > imageDetail.json
+      - cat imagedefinitions.json
 artifacts:
   files:
     - "**/*"
-    - Dockerrun.aws.json
-  base-directory: .
+    - imagedefinitions.json
+    - imageDetail.json
+  secondary-artifacts:
+    DefinitionArtifact:
+      files:
+        - appspec.yaml
+        - taskdef.json
+    ImageArtifact:
+      files:
+        - imageDetail.json

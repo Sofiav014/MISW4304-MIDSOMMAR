@@ -1,0 +1,24 @@
+{
+  "executionRoleArn": "arn:aws:iam::777422376006:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "portMappings": [
+        {
+          "hostPort": 3000,
+          "protocol": "tcp",
+          "containerPort": 3000
+        }
+      ],
+
+      "image": "<IMAGE1_NAME>",
+      "essential": true,
+      "name": "container-blacklist"
+    }
+  ],
+
+  "requiresCompatibilities": ["FARGATE"],
+  "networkMode": "awsvpc",
+  "cpu": "512",
+  "memory": "1024",
+  "family": "blacklist-task"
+}
