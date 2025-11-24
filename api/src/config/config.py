@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 # Get database configuration from environment variables
 db_user = os.getenv("DB_USER", "postgres")
 db_pass = os.getenv("DB_PASSWORD", "postgres")
-db_host = os.getenv("DB_HOST", "database-1.cn4u2kgsmb84.us-east-2.rds.amazonaws.com")
+db_host = os.getenv("DB_HOST", "database-1-midsommar.ccr8u60ck1r6.us-east-1.rds.amazonaws.com")
 db_name = os.getenv("DB_NAME", "postgres")
 # Ensure db_port has a valid default value if empty or not set
 db_port = os.getenv("DB_PORT", "").strip() or "5432"

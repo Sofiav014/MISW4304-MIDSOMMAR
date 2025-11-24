@@ -1,7 +1,7 @@
 {
   "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "777422376006.dkr.ecr.us-east-1.amazonaws.com/blacklist-microservice:latest",
+    "Name": "892255149456.dkr.ecr.us-east-1.amazonaws.com/blacklist-microservice:latest",
     "Update": "true"
   },
   "Ports": [{ "ContainerPort": "3000" }],
